@@ -69,19 +69,56 @@ Using advanced AI, the system projects these signals 24 years into the future. A
 
 ### GitHub Pages (via GitHub Actions)
 
-To host this project on GitHub Pages, we recommend using the building-in **Vite GitHub Action**. This will automatically build your project and deploy the `dist` folder.
+To host this project on GitHub Pages, use this **Vite Build & Deploy** workflow. This automatically installs dependencies, builds the project, and deploys the `dist` folder.
 
-1.  **Vite Configuration**: The `vite.config.js` is already configured with `base: '/archive-of-the-future-self/'`.
-2.  **Deployment Steps**:
-    - Push your code to GitHub.
-    - Go to your repository on GitHub.
-    - Navigate to **Settings** > **Pages**.
-    - Under **Build and deployment** > **Source**, select **GitHub Actions**.
-    - Find the **Vite** template (or click "Configure" on a suggested Vite workflow).
-    - Commit the `static.yml` or `deploy.yml` file GitHub provides.
-    - GitHub will now build and deploy your project automatically every time you push.
+1.  **Create Workflow**: In your repo, create a file at `.github/workflows/deploy.yml`.
+2.  **Paste this Content**:
+```yaml
+name: Deploy to GitHub Pages
 
-3.  **URL**: Your site will be live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    needs: build_site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+3.  **URL**: Site live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
 
 ## �🔒 Privacy & API Usage
 
