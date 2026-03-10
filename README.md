@@ -2,7 +2,6 @@
 
 An interactive art installation and AI-driven experience that allows users to send messages to their future selves and receive audio-visual "projections" from the year 2050.
 
-![Project Preview](/Users/adityakumar/.gemini/antigravity/brain/0e588ee4-cbda-4687-8e2b-9b4e53395cc1/.system_generated/click_feedback/click_feedback_1773169332247.png)
 
 ## 🌌 Concept
 
