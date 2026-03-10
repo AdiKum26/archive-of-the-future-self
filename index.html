@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive of the Future Self</title>
+</head>
+
+<body>
+  <!-- Stars canvas -->
+  <div id="stars"><canvas id="star-canvas"></canvas></div>
+
+  <!-- Floating text layer -->
+  <div id="floating-text-layer"></div>
+
+  <!-- Corner decorations -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div id="year-display">ARCHIVE SYSTEM · INITIALIZED 2026 · PROJECTION TARGET: 2050</div>
+
+  <div id="error-toast"></div>
+
+  <div id="app">
+    <!-- HEADER -->
+    <div id="header">
+      <div class="eyebrow">Interactive Installation · 2026 — 2050</div>
+      <h1>Archive of the<br>Future Self</h1>
+      <div class="year-tag">∴ Who will you become? ∴</div>
+      <div class="divider"></div>
+    </div>
+
+    <!-- RECORDING PANEL -->
+    <div id="recording-panel" style="display: flex;">
+      <div class="prompt-box">
+        <div class="prompt-label">Your Message to the Future</div>
+        <div class="prompt-text">
+          Speak your name, your age, and tell the archive one thing you believe in,
+          one thing you fear, and one thing you dream of.
+          Your future self is listening.
+        </div>
+      </div>
+
+      <div id="permission-prompt" style="text-align:center;margin-bottom:1.5rem;">
+        <button class="btn-enter" id="request-mic-btn" style="width:auto;padding:0.7rem 2rem;font-size:0.75rem;">
+          ◎ &nbsp; Allow Microphone Access
+        </button>
+        <div
+          style="font-family:'Share Tech Mono',monospace;font-size:0.58rem;letter-spacing:0.25em;color:var(--text-dim);margin-top:0.6rem;">
+          Required to record your voice
+        </div>
+      </div>
+
+      <div class="mic-ring-wrapper">
+        <div class="mic-ring ring1"></div>
+        <div class="mic-ring ring2"></div>
+        <button id="mic-btn">
+          <svg id="mic-icon-record" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber)">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+            <line x1="12" y1="19" x2="12" y2="23" />
+            <line x1="8" y1="23" x2="16" y2="23" />
+          </svg>
+          <svg id="mic-icon-stop" viewBox="0 0 24 24" fill="currentColor"
+            style="color:var(--danger);display:none;width:28px;height:28px">
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mic-status" id="mic-status">Hold to record · Click to begin</div>
+
+      <canvas id="waveform-canvas"></canvas>
+
+      <div id="transcript-box">
+        <div class="transcript-label">Your words, received</div>
+        <div id="transcript-text"></div>
+      </div>
+
+      <div id="response-box">
+        <div class="response-header">
+          <span id="response-playing-dot" style="display:none"><span class="playing-dot"></span></span>
+          Transmission from 2050
+        </div>
+        <div id="response-visual-container" style="display:none; margin-bottom: 1.5rem;">
+          <div id="visual-loading"
+            style="font-family:'Share Tech Mono',monospace; font-size: 0.6rem; color: var(--amber-dim); text-align: center; margin-bottom: 1rem; letter-spacing: 0.2em;">
+            EXTRACTING VISUAL DATA...</div>
+          <img id="future-image" src="" alt="Projection Visual"
+            style="width: 100%; border: 1px solid var(--amber-dim); box-shadow: 0 0 30px rgba(0,0,0,0.5); opacity: 0; transition: opacity 2s ease-in-out;" />
+        </div>
+        <div id="response-text"></div>
+      </div>
+
+      <div id="controls-row">
+        <button class="btn-sm" id="reset-btn">New Recording</button>
+        <button class="btn-sm" id="change-key-btn">Change Key</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
