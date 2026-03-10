@@ -67,19 +67,21 @@ Using advanced AI, the system projects these signals 24 years into the future. A
 
 ## � Deployment
 
-### GitHub Pages
+### GitHub Pages (via GitHub Actions)
 
-To deploy this project to GitHub Pages, follow these steps:
+To host this project on GitHub Pages, we recommend using the building-in **Vite GitHub Action**. This will automatically build your project and deploy the `dist` folder.
 
-1.  **Vite Configuration**: The `vite.config.js` is already configured with the correct `base` path.
-2.  **GitHub Action**: This project is best deployed using the "Static HTML" or "Vite" GitHub Actions workflow.
-3.  **Deployment Steps**:
+1.  **Vite Configuration**: The `vite.config.js` is already configured with `base: '/archive-of-the-future-self/'`.
+2.  **Deployment Steps**:
+    - Push your code to GitHub.
     - Go to your repository on GitHub.
     - Navigate to **Settings** > **Pages**.
     - Under **Build and deployment** > **Source**, select **GitHub Actions**.
-    - Click **Configure** on the "Static HTML" or "Vite" template.
-    - Commit the suggested workflow file.
-    - Your site will be live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
+    - Find the **Vite** template (or click "Configure" on a suggested Vite workflow).
+    - Commit the `static.yml` or `deploy.yml` file GitHub provides.
+    - GitHub will now build and deploy your project automatically every time you push.
+
+3.  **URL**: Your site will be live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
 
 ## �🔒 Privacy & API Usage
 
