@@ -1,5 +1,7 @@
 # Archive of the Future Self
 
+![Deploy to GitHub Pages](https://github.com/AdiKum26/archive-of-the-future-self/actions/workflows/deploy.yml/badge.svg)
+
 An interactive art installation and AI-driven experience that allows users to send messages to their future selves and receive audio-visual "projections" from the year 2050.
 
 
