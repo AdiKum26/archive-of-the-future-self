@@ -118,7 +118,16 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-3.  **URL**: Site live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
+3.  **API Key Configuration**:
+    - For the live site to work, you need to add your OpenAI API key to GitHub.
+    - Go to your repository on GitHub.
+    - Navigate to **Settings** > **Secrets and variables** > **Actions**.
+    - Click **New repository secret**.
+    - Name: `VITE_OPENAI_API_KEY`
+    - Value: `your_sk_key_here`
+    - The GitHub Action will now automatically bake this key into the build!
+
+4.  **URL**: Site live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
 
 ## �🔒 Privacy & API Usage
 
