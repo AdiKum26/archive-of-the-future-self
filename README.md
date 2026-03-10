@@ -65,7 +65,23 @@ Using advanced AI, the system projects these signals 24 years into the future. A
    npm run build
    ```
 
-## 🔒 Privacy & API Usage
+## � Deployment
+
+### GitHub Pages
+
+To deploy this project to GitHub Pages, follow these steps:
+
+1.  **Vite Configuration**: The `vite.config.js` is already configured with the correct `base` path.
+2.  **GitHub Action**: This project is best deployed using the "Static HTML" or "Vite" GitHub Actions workflow.
+3.  **Deployment Steps**:
+    - Go to your repository on GitHub.
+    - Navigate to **Settings** > **Pages**.
+    - Under **Build and deployment** > **Source**, select **GitHub Actions**.
+    - Click **Configure** on the "Static HTML" or "Vite" template.
+    - Commit the suggested workflow file.
+    - Your site will be live at `https://AdiKum26.github.io/archive-of-the-future-self/`.
+
+## �🔒 Privacy & API Usage
 
 - This project communicates directly with OpenAI's API.
 - Your API key is stored locally in your `.env` file and is never exposed to external servers except OpenAI.
